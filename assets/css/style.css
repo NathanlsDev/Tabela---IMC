@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+  font-family: sans-serif;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --bgColor: rgb(14, 14, 54);
+  --sectionColor: rgb(17, 50, 56);
+  --highLightGlow: rgb(245, 66, 215);
+  --fontColor: rgb(255, 255, 255);
+  --contrast-font: rgba(219, 219, 240, 0.808);
+  --normalState: rgb(172, 255, 47);
+  --alertState: rgb(255, 166, 0);
+  --severalState: rgba(220, 20, 60, 0.993);
+  --invalidInput: rgb(245, 222, 179);
+}
+
+body {
+  padding: 0;
+  background-color: var(--bgColor);
+  color: var(--fontColor);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.container {
+  width: 60vw;
+  border: 2px solid;
+  background-color: var(--sectionColor);
+  padding: 20px;
+  border-radius: 50px 0;
+}
+
+form legend {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 24px 0;
+}
+
+form input,
+form label,
+form button {
+  margin-bottom: 16px;
+  display: block;
+  width: 100%;
+  border-radius: 16px 0;
+  font-size: 24px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+form input {
+  font-size: 24px;
+  height: 50px;
+  padding: 0 20px;
+}
+
+form input:focus {
+  outline: 2px solid var(--highLightGlow);
+}
+
+form button {
+  border: none;
+  height: 50px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+  font-size: 24px;
+  border-radius: 16px 0;
+}
+
+form button:hover {
+  background-color: var(--sectionColor);
+  border: 2px solid var(--fontColor);
+  color: var(--fontColor);
+  filter: brightness(1.15);
+}
+
+form button:active {
+  transform: scale(0.97);
+}
+
+form button:focus {
+  border: 2px solid var(--highLightGlow);
+}
+
+.imc-infos {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.section {
+  font-size: 24px;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8;
+}
+
+.section ul > li:nth-child(even) {
+  color: var(--contrast-font);
+}
+
+.output-message {
+  font-size: 24px;
+  color: var(--sectionColor);
+  background-color: var(--invalidInput);
+  border-radius: 16px 0;
+  padding: 8px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.stateNormal {
+  background-color: var(--normalState);
+}
+.stateAlert {
+  background-color: var(--alertState);
+}
+.stateSeveral {
+  background-color: var(--severalState);
+}
+
+.disabled {
+  display: none;
+}
